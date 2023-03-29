@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <!-- Here we are grouping the whole h2 in one style using style tag.. this is internal css
+        
+        An internal CSS is used to define a style for a single HTML page.
+
+An internal CSS is defined in the <head> section of an HTML page, within a <style> element.
+
+-->
+
+    </head>
+    
+    <style>
+        h2 {
+            font-style: italic; color: blue;text-align: center;
+
+        }
+    </style>
+    <body>
+        
+        <h1 style="text-align: center; font-style: oblique; color: black;">Welcome</h1>
+        <h2>Harika</h2>
+        <h2>Ajith</h2>
+        <h2>Mounika</h2>
+    </body>
+</html>
