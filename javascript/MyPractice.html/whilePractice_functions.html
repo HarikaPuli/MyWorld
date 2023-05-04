@@ -1,0 +1,120 @@
+<html>
+    <head>
+     <center>   <h1>Cars list</h1>
+    </head>
+    <body>
+        Car Name: <input type="text" id="carName" placeholder="Enter name"><br><br>
+        Car Model: <input type="text" id="carModel" placeholder="Enter model"><br><br>
+        Car Colour: <input type="text" id="carColour" placeholder="Enter colour"><br><br>
+        Car Price: <input type="text" id="carPrice" placeholder="Enter price"><br><br>
+        <button  id="AddOrUpdateBtn" onclick="Add()">Add</button></center>
+        <ul id="ul"></ul>
+        <script>
+        
+                var carsCollection = [];
+            function Add() {
+                const date = new Date();
+                var current = date.getHours()+date.getMinutes()+date.getSeconds()+date.getMilliseconds();
+                
+                var carId = current;
+                
+                var carName = document.getElementById("carName").value;
+                var carModel = document.getElementById("carModel").value;
+                var carColour = document.getElementById("carModel").value;
+                var carPrice = document.getElementById("carPrice").value;
+                var cars = {
+                    carId:   current,
+                    name:  carName,
+                    model: carModel,
+                    colour: carColour,
+                    price: carPrice,
+                    SetCarName : function(newName)
+                    {
+                        name = newName;
+                    }
+                }
+
+                carsCollection.push(cars);
+                console.log(carsCollection);
+                clear();
+                showCars();
+            }
+            function editCar(carId) {
+            console.log("carId", carId);
+            var index = 0;
+            while (index < carsCollection.length) {
+                var obj = carsCollection[index];
+                if (obj.carId == carId) {
+                    document.getElementById("carName").value = obj.name;
+                    document.getElementById("carModel").value = obj.model;
+                    document.getElementById("carColour").value = obj.colour;
+                    document.getElementById("carPrice").value = obj.price;
+                
+                }
+                index++;
+            }
+            var btn = document.getElementById("AddOrUpdateBtn");
+            btn.innerHTML = "saveCar";
+            btn.setAttribute('onclick', 'saveCar(\'' + carId + '\')');
+        }
+        function saveCar(carId) {
+            var name = document.getElementById("carName").value;
+            var model = document.getElementById("carModel").value;
+            var colour = document.getElementById("carColour").value;
+            var price = document.getElementById("carPrice").value;
+            var index = 0;
+            while (index < carsCollection.length) {
+                var obj = carsCollection[index];
+                if (obj.carId == carId) {
+                    obj.SetCarName(name);
+                    obj.model = model;
+                    obj.colour = colour;
+                    obj.price = price;
+                    break;
+                }
+                index++;
+            }
+            var btn = document.getElementById("AddOrUpdateBtn");
+            btn.innerHTML = "Add";
+            btn.setAttribute('onclick', "Add()");
+            
+            clear();
+            showCars();
+        }
+            function showCars() {
+            console.log("carsCollection", carsCollection);
+            var ul = document.getElementById("ul");
+            var index = 0;
+            var listOfCars = "";
+            while (index < carsCollection.length) {
+                var obj = carsCollection[index];
+                listOfCars = listOfCars + "<li>" + obj.carId + "&nbsp;&nbsp;&nbsp;" + obj.name + "&nbsp;&nbsp;&nbsp;" + obj.model + "&nbsp;&nbsp;&nbsp;" + obj.colour + "&nbsp;&nbsp;&nbsp;" + obj.price + "&nbsp;&nbsp;&nbsp;" + "<button onclick='deleteCar(" + obj.carId + ")'>Delete</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + "<button onclick='editCar(" + obj.carId + ")'>Edit</button>" + "</li>";
+                index++;
+            
+            }
+            ul.innerHTML=listOfCars;
+        }
+        function deleteCar(carId) {
+            var index = 0;
+            while (index < carsCollection.length) {
+                var obj = carsCollection[index];
+                if (obj.carId == carId) {
+                    carsCollection.splice(index, 1);
+                    break;
+                }
+                index++;
+            }
+            showCars();
+
+        }
+        function clear() {
+            document.getElementById("carName").value = "";
+            document.getElementById("carModel").value = "";
+            document.getElementById("carColour").value = "";
+            document.getElementById("carPrice").value = "";
+        }
+
+        </script>
+
+    </body>
+</html>

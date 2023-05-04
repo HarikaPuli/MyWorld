@@ -1,0 +1,27 @@
+<!--Create a validation for the  password with the following constraints.
+1 uppercase, 1 lowercase, 1 digit, 1 special character, min chars should be 8.-->
+
+
+<html>
+    <head>
+        <input type="text" id="password" placeholder="Enter password">
+        <button onclick="validatePassword()">validatePassword</button>
+
+    </head>
+    <body>
+        
+        <script>
+            
+            function validatePassword()
+            {
+                var password= document.getElementById("password").value;
+                //var pattern=/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}/;
+                var pattern=/(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9])[a-zA-Z0-9]{8,}/;
+                console.log(pattern.test(password));
+            }
+            </script>
+    </body>
+                
+</html>
+
+

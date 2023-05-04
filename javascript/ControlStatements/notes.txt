@@ -1,0 +1,35 @@
+3 types of control statements
+
+1. Sequential
+        if, if else, switch.
+
+
+       (a) if: if we have only one condition and it is positive , we use if condition
+
+        syntax:
+
+        if(test-condition){
+            code
+
+        }
+
+       
+       
+        (b) if else : if there are two conditions then we will use this
+
+        syntax: if (condition) {
+  //  block of code to be executed if the condition is true
+} else {
+  //  block of code to be executed if the condition is false
+}
+
+
+
+
+        (c).  switch : if we have two or more conditions we will use this
+
+        syntax;
+
+
+
+

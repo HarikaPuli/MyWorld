@@ -1,0 +1,49 @@
+<!---
+2.
+create dropdown list of 5 lang and based on user selection, display the content based on the language.-->
+
+
+
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <select id="language" onchange="capture()">
+        <option value="English">English</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Telugu">Telugu</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Kannada">Kannada</option>
+    </select>
+ 
+  <label id="value">Do you like cheese?</label>
+    <script>
+         function capture()
+        {
+            var language= document.getElementById("language");
+            var label= document.getElementById("value");
+            switch(language)
+            {
+                case "English" : label.innerHTML= "How are you" ; break;
+                case "Hindi" : label.innerHTML= "आप कैसे हैं" ; break;
+                case "Telugu" : label.innerHTML= "మీరు ఎలా ఉన్నారు" ; break;
+                case "Arabic" : label.innerHTML= "كيف حالك" ; break;
+                case "Kannada" : label.innerHTML= "ನೀವು ಹೇಗಿದ್ದೀರಿ" ; break;
+                default : label.innerHTML= "Language not supported"; break;
+
+            }
+        
+
+
+
+        }
+    </script>
+    
+    
+
+
+
+    </body>
+</html>

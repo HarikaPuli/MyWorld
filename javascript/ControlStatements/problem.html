@@ -1,0 +1,57 @@
+<!--create a dropdown list of DOB from Facebook page and provide a button  
+once the user clicks on the button , then capture the date, month, year and display on the ui. eg: 10/07/1995-->
+
+<html>
+    <head>
+    </head>
+        <body>
+
+            <select id="date">
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           </select>
+
+           <select id="months">
+            <option value="jan">jan</option>
+            <option value="feb">feb</option>
+            <option value="mar">mar</option>
+            <option value="apr">apr</option>
+            <option value="may">may</option>
+                </select>
+
+                <select id="year">
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+            </select>
+
+            <button onclick="capture()">Submit</button>
+            <label id="fulldate"></label>
+           <script>
+
+            function capture()
+            {
+
+               
+                var date= document.getElementById("date").value;
+                var monthVaule= document.getElementById("months").value;
+                var year= document.getElementById("year").value;
+                var dateString = date+"/"+monthVaule+"/"+year;
+                document.getElementById("fulldate").innerHTML=dateString;
+               
+
+            }
+            
+
+           </script>
+
+        </body>
+   
+    
+
+</html>

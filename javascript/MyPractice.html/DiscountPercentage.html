@@ -1,0 +1,23 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="number" name="originalPrice" id="originalPrice" placeholder="Enter Price"><br><br>
+        <input type="number" name="discountPercent" id="discountPercent" placeholder="Enter discount %"><br><br>
+        <button onclick="calculate()">Calculate</button>
+
+        <script>
+            function calculate()
+            {
+
+                var originalPrice= document.getElementById("originalPrice").value;
+                var discountPercent= document.getElementById("discountPercent").value;
+                var percentage= (discountPercent/100)*100;
+                var Price = originalPrice-percentage;
+                alert( "Your Price is " +Price);
+            }
+        </script>
+
+    </body>
+</html>

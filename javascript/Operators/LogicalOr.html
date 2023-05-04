@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input (type="text") name="Email" id="Email" placeholder="Email or PhoneNumber"><br><br>
+        <input type="number" name="password" id="password" placeholder="Enter password"><br><br>
+        <button onclick="login()">Login</button>
+
+        <script>
+            function login()
+            {
+
+                var Email= document.getElementById("Email").value;
+                var password=document.getElementById("password").value;
+                (Email == ("pharika@gmail.com") || Email == ("9701102727")) && password == "12345" ? alert("login succes") : alert("login failure");
+            }
+        </script>
+        
+    </body>
+</html>

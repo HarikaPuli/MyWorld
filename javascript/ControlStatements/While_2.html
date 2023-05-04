@@ -1,0 +1,72 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <center>
+        <h1>Add Product</h1>
+        <input type="text" id="pid" placeholder="enter pid"> <br><br>
+        <input type="text" id="name" placeholder="enter name"> <br><br>
+        <input type="number" id="price" placeholder="enter price"> <br><br>
+        <input type="text" id="seller" placeholder="enter seller"> <br><br>
+        <button onclick="addProduct()">Add Product</button>
+        
+    </center>
+
+    <ul id="ul">
+
+    </ul>
+
+    <script>
+        var products = [];
+        var one =1;
+        var two = one;
+        one = 3;
+        function addProduct() {
+            const date = new Date();
+            var current = date.getHours()+date.getMinutes()+date.getSeconds()+date.getMilliseconds();
+            var pid = current;
+            var name = document.getElementById("name").value;
+            var price = document.getElementById("price").value;
+            var seller = document.getElementById("seller").value;
+            var product = {
+                productId: pid,
+                productName: name,
+                price: price,
+                seller: seller
+              
+            }
+            console.log("product two", two);
+            console.log("product one", one);
+            products.push(product);
+            console.log(products);
+            showProducts();
+        }
+        function showProducts() {
+            var ul = document.getElementById("ul");
+            var index = 0;
+            var listOfItems = "";
+            while (index < products.length) {
+                var obj = products[index];
+                var i = index;
+                listOfItems = listOfItems + "<li>" + obj.productId + "&nbsp;&nbsp;&nbsp;" + obj.productName + "&nbsp;&nbsp;&nbsp;" + obj.price + "&nbsp;&nbsp;&nbsp;" + '<button onClick="deleteRow(\'' + i + '\')"> Delete</button>' +  '<button onClick="Edit(\'' + i + '\')"> Edit</button>' + "</li>";
+                index++;
+            }
+            ul.innerHTML = listOfItems;
+
+        }
+         function deleteRow(index)
+         {
+            console.log(index);
+                products.splice(index,1);
+                showProducts();
+                
+         }
+         
+
+    </script>
+</body>
+
+</html>

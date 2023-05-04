@@ -1,0 +1,14 @@
+variables:
+
+1.  !!!!! Local variables
+if we create variables inside the function it is called local variables.
+
+
+example: function f1() {         //function declaration
+
+    var a=1;
+    var b=2;
+    var c= a+b;
+    console.log(c);
+}
+f1();                               // calling a function
