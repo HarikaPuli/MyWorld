@@ -9,7 +9,9 @@ function App() {
   }
   return (
     <div>
-      <Users genUser={gen_user}></Users>
+      <Users genUser={gen_user}>
+        
+      </Users>
     </div>
   );
 }

@@ -14,13 +14,35 @@ function Users(props) {
         address: "Hyderabad",
         pincode: 500765
     }
+    var gen_user = {
+        name: "rajesh",
+        address: "chennai",
+        pincode: 757899
+      }
     
     return (
         <div>
             <h1>Users</h1>
-            <PreviligedUser data={prev_user} ></PreviligedUser>
-            <GenericUser data={props.genUser}></GenericUser>
-            <NormalUser data={Norm_user}></NormalUser>
+            
+            <div>
+            <h1> User 1</h1>
+            {prev_user.name} <br></br>
+            {prev_user.address} <br></br>
+            {prev_user.pincode}<br></br>
+        </div>
+        <div>
+            <h1> User 2</h1>
+            {Norm_user.name} <br></br>
+            {Norm_user.address} <br></br>
+            {Norm_user.pincode}<br></br>
+        </div>
+        <div>
+            <h1> User 3</h1>
+            {gen_user.name} <br></br>
+            {gen_user.address} <br></br>
+            {gen_user.pincode}<br></br>
+        </div>
+
             
 
         </div>
