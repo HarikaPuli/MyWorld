@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <label for="date">Date:</label>
+        <input type="date" id="startdate" name="date"><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="currentdate" name="date">
+    
+        <script>
+           
+            var startDate;
+            function StartYearDate()
+            {
+                startDate=new Date();
+                startDate.setDate(1);
+                startDate.setMonth(0);
+               
+                console.log(startDate);
+                var dateUi=document.getElementById("startdate").value= startDate.toISOString().substr(0, 10);
+            }
+
+            StartYearDate();
+            SetDate();
+            var currentDate;
+            function SetDate()
+            {
+                currentDate= new Date();
+                console.log(currentDate);
+                var dateUi = document.getElementById("currentdate").value = currentDate.toISOString().substr(0, 10);
+                
+            }
+
+          
+        </script>
+
+</body>
+
+</html>

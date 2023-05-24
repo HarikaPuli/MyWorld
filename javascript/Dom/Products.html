@@ -1,0 +1,63 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+       ProductName: <input type="text" name="name" id="name"><br><br>
+       Price: <input type="text" name="price" id="price"><br><br>
+        <input type="file" id="img" name="img" accept="image/*"><br><br>
+        <button onclick="add()">Add</button>
+        <ul id="ul"></ul>
+
+        <script>
+            var products=[];
+
+            var openFile = function(file) {
+                var input = file.target;
+                var reader = new FileReader();
+                reader.onload = function(){
+                    var dataURL = reader.result;
+                    var output = document.getElementById('output');
+                    output.src = dataURL;
+                };
+                reader.readAsDataURL(input.files[0]);
+            };
+            function add()
+            {
+                var name = document.getElementById("name").value;
+                var price = document.getElementById("price").value;
+                var img = document.getElementById("img").value;
+
+                var productDetails = {
+                    Productimage: img,
+                    Productname : name,
+                    productprice: price
+                    
+                }
+                
+                products.push(productDetails);
+                console.log(products);
+                //After adding all products show the products in UI
+                ShowProducts();
+            }    
+
+            function ShowProducts() {
+               
+                var body = document.body;
+                var ul = document.getElementById("ul");
+                for (let i=0 ;i<products.length; i++)
+                {
+                    var image = document.createElement("img");
+                    image.src  = products[i].Productimage;
+                    console.log("products", products);
+                    body.appendChild((image));            
+                
+                }
+               
+
+            }
+
+        </script>
+
+    </body>
+</html>
