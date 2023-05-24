@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Users from './Users';
 
 function App() {
+
+  var gen_user = {
+    name: "rajesh",
+    address: "chennai",
+    pincode: 757899
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Users genUser={gen_user}></Users>
     </div>
   );
 }
 
 export default App;
+     
+
