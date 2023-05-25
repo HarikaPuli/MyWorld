@@ -1,6 +1,4 @@
-import PreviligedUser from "./PreviligedUser"
-import GenericUser from "./GenericUser"
-import NormalUser from "./NormalUser"
+
 
 function Users(props) {
 
