@@ -1,11 +1,11 @@
-
+import React from 'react';
 import './App.css';
 import'./Expenses.css';
 import Expenses from './Expenses';
 
 
 
-function App() {
+
 
       const App = () => {
   const expenses = [
@@ -36,10 +36,10 @@ function App() {
   return (
     <div>
       <h1>Let's get started!</h1>
-     <Expenses items={Expenses}/>
+     <Expenses items={expenses}/>
     </div>
   );
 }
-}
+
 
 export default App;
