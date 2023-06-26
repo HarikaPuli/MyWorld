@@ -2,11 +2,6 @@ import React from 'react';
 import './App.css';
 import'./Expenses.css';
 import Expenses from './Expenses';
-
-
-
-
-
 const App = () => {
     const expenses = [
       {
