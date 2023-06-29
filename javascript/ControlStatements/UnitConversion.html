@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <h1>Unit Conversions</h1>
+        
+    </head>
+        <body>
+            Enter a number <input type="number" id="number" placeholder="Enter Value"></input>
+            <select id="InputUnit">
+           <option value="Select">Select</option>
+           <option value="Meters">Meters</option>
+           <option value="centimeters">Centimeters</option>
+           <option value="inches">Inches</option>
+           <option value="Feet">Feet</option>
+           </select>
+           <select id="ConvertUnit">
+            <option value="Select">Select</option>
+            <option value="Meters">Meters</option>
+            <option value="centimeters">Centimeters</option>
+            <option value="inches">Inches</option>
+            <option value="Feet">Feet</option>
+            </select>
+        <button onclick="capture()">GetDetails</button>
+            <label id="Unit Conversions"></label>
+           <script>
+
+            function capture()
+            {
+                var dict = {
+                    Name: "Eric",
+                    Age : 23,
+                    Job: "Freelancer",
+                    Skills : "JavaScript"
+                    };
+                var number = document.getElementById("number").value;
+                var inputUnit= document.getElementById("InputUnit").value;
+                var convertUnit= document.getElementById("ConvertUnit").value;
+                
+              
+               
+
+            }
+            
+
+           </script>
+
+        </body>
+   
+    
+
+</html>

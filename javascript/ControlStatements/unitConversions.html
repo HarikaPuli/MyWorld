@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <h1>Unit Conversions</h1>
+
+    </head>
+    <body>
+        <select id="SelectUnit" onchange="getDetails()">
+        <option value="Select">Select</option>
+        <option value="meters">Meters</option>
+        <option value="centimeters">Centimeters</option>
+        <option value="inches">Inches</option>
+        <option value="feet">Feet</option>
+    </select>
+ 
+  <label id="value"></label>
+    <script>
+         function getDetails()
+        {
+            var SelectUnit= document.getElementById("SelectUnit");
+            var label= document.getElementById("value");
+            switch(Unit)
+            {
+                case "meters" : label.innerHTML=  ""; break;
+                case "centimeters" : label.innerHTML=  ""; break;
+                case "inches" : label.innerHTML= "" ; break;
+                case "feet" : label.innerHTML= "";break;
+                default : label.innerHTML= "NO Unit "; break;
+
+            }
+        }
+    </script>
+ </body>
+</html>
