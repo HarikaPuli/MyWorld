@@ -7,12 +7,14 @@ import { Provider } from 'react-redux';
 import ReduxPromise from 'redux-promise';
 import { createStore, applyMiddleware } from 'redux';   //creating store
 import rootReducer from './reducers';                 //creating root reducer
+import { composeWithDevTools } from 'redux-devtools-extension';
 const store = applyMiddleware(ReduxPromise)(createStore);
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store(rootReducer)}>     
+  <Provider store={store(rootReducer,composeWithDevTools())}>     
     <App></App>
   </Provider>
  // <React.StrictMode>
